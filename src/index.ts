@@ -41,7 +41,9 @@ function main() {
         console.info(`${ctx.chat.username ?? ctx.chat.id} - ${prompt}`);
         let answer = await session.prompt(prompt, {
             onToken: (tokens) => process.stdout.write(model.detokenize(tokens)),
-            repeatPenalty: { frequencyPenalty: 0.5, presencePenalty: 0.5 },
+            repeatPenalty: { frequencyPenalty: 0.7, presencePenalty: 0.5 },
+            temperature: 0.5,
+            topP: 0.6,
         });
         answer = answer.replace(/<\.*\>/g, "");
         await ctx.reply(answer).catch(console.error);
