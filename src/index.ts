@@ -64,6 +64,7 @@ function main() {
             await ctx.reply(answer).catch(console.error);
         }
     });
+    console.log(`\nStarted!\nUsing model: ${model.filename}\n`);
     bot.start({ allowed_updates, drop_pending_updates: true });
 }
 

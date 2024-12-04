@@ -1,10 +1,8 @@
 import { ChatMLChatWrapper, getLlama, LlamaChatSession } from "node-llama-cpp";
 
-// const llama = await getLlama({ gpu: "cuda" });
-const llama = await getLlama({ gpu: "cuda" });
+const llama = await getLlama();
 const model = await llama.loadModel({
     modelPath: "models/Ellaria-9B.i1-IQ3_S.gguf",
-    // gpuLayers: "max",
 });
 const context = await model.createContext();
 const session = new LlamaChatSession({
