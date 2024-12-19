@@ -2,7 +2,7 @@ import { GrammyError, HttpError } from "grammy";
 import { model, session } from "./AI/index.js";
 import { bot } from "./bot.js";
 
-process.on("uncaughtException", function (err) {
+process.on("uncaughtException", (err) => {
     console.error("You Shall Not Pass!");
     console.error(err);
 });
